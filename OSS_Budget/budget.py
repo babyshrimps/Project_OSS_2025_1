@@ -45,6 +45,6 @@ class Budget:
             print(f"수입이 추가되었습니다.\n 현재 총 수익은 {total_r} .\n")
             return
 
-        except:
+        except ValueError:
             print("오류 발생. 다시 써주세요")
             return
