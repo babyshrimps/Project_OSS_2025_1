@@ -24,30 +24,34 @@ class Budget:
     def total_spent(self):
         total_e = sum(e.amount for e in self.expenses)
         total_r = sum(self.revenue_list)
-        per_total = (total_e/total_r)*100
-        print(f"총 지출: {total_e}원\n")
-        print(f"현재 총 수익의 {per_total}% 사용하셨습니다.\n")
-        if 0 < per_total and per_total <= 40:
-            print("절약하는 자세 좋아요!")
+        if total_e == 0 or total_r == 0:
+            print("\n아직 가계부를 작성하지 않으셨나요? 이번 달을 정리해보아요\n")
             return
-        elif 40 < per_total and per_total <= 70:
-            print("이번달은 돈을 좀 쓰셨네요. 다음달은 아껴쓰기!\n")
-            return
-        elif 70 < per_total and per_total <= 100 :
-            print("과소비 하셨습니다! 가계부 내역을 되돌아보면서 소비를 줄이세요! \n")
-            return
-        elif per_total == 0:
-            print("아직 가계부를 작성하지 않으셨나요? 이번 달을 되돌아보아요! \n")
-        else : 
-            print("파산입니다! 허리띠를 졸라매세요\n")
+        else :
+            per_total = (total_e/total_r)*100
+            print(f"\n총 지출: {total_e}원\n")
+            print(f"현재 총 수익의 {per_total}% 사용하셨습니다.\n")
             
+            if 0 < per_total and per_total <= 40:
+                print("절약하는 자세 좋아요!\n")
+                return
+            elif 40 < per_total and per_total <= 70:
+                print("이번달은 돈을 좀 쓰셨네요. 다음달은 아껴쓰기!\n")
+                return
+            elif 70 < per_total and per_total <= 100 :
+                print("과소비 하셨습니다! 가계부 내역을 되돌아보면서 소비를 줄이세요!\n")
+                return
+
+            else : 
+                print("파산입니다! 허리띠를 졸라매세요\n")
+        
             
     def add_revenue(self):
         try:
-            revenue=int(input("수입을 써주세요 : "))
+            revenue=int(input("\n수입을 써주세요 : "))
             self.revenue_list.append(revenue)
             total_r = sum(self.revenue_list)
-            print(f"수입이 추가되었습니다.\n 현재 총 수익은 {total_r} .\n")
+            print(f"\n수입이 추가되었습니다.\n현재 총 수익은 {total_r}원 .\n")
             return
 
         except ValueError:
