@@ -29,8 +29,8 @@ class Budget:
 	    if not self.expenses:
 		    return
 
-	    print("수정할 지출 내역을 선택하시오 : ")
-	    choose_edit = int(input())
+	    print("수정할 지출 내역의 번호를 쓰시오 : ")
+	    choose_edit = int(input()) + 1
 	    
 	    if choose_edit < 1 or choose_edit > len(self.expenses):
 		    print("잘못입력. 다시 시도하세요.\n")
