@@ -17,10 +17,13 @@ def main():
             description = input("설명: ")
             try:
                 amount = int(input("금액(원): "))
+                date = input("금액을 지출하신 날짜? ( '2000.01.01' 형식으로 입력. 만약 오늘 이라면 t 를 입력) : ")
+
             except ValueError:
                 print("잘못된 금액입니다.\n")
                 continue
-            budget.add_expense(category, description, amount)
+            budget.add_expense(date, category, description, amount)
+            
 
         elif choice == "2":
             budget.list_expenses()
