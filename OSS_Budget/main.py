@@ -8,8 +8,9 @@ def main():
         print("==== 간단 가계부 ====")
         print("1. 지출 추가")
         print("2. 지출 목록 보기")
-        print("3. 총 지출 보기")
+        print("3. 총 지출 및 사용 금액 비율 보기")
         print("4. 종료")
+        print("5. 수익 추가 ")
         choice = input("선택 > ")
 
         if choice == "1":
@@ -31,6 +32,9 @@ def main():
         elif choice == "4":
             print("가계부를 종료합니다.")
             break
+
+        elif choice =="5":
+            budget.add_revenue()
 
         else:
             print("잘못된 선택입니다.\n")
