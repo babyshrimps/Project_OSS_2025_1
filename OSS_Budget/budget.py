@@ -27,16 +27,21 @@ class Budget:
         per_total = (total_e/total_r)*100
         print(f"총 지출: {total_e}원\n")
         print(f"현재 총 수익의 {per_total}% 사용하셨습니다.\n")
-        if 0 <= per_total and per_total <= 40:
+        if 0 < per_total and per_total <= 40:
             print("절약하는 자세 좋아요!")
             return
         elif 40 < per_total and per_total <= 70:
             print("이번달은 돈을 좀 쓰셨네요. 다음달은 아껴쓰기!\n")
             return
-        elif 70< per_total and per_total <= 100 :
+        elif 70 < per_total and per_total <= 100 :
             print("과소비 하셨습니다! 가계부 내역을 되돌아보면서 소비를 줄이세요! \n")
             return
-
+        elif per_total == 0:
+            print("아직 가계부를 작성하지 않으셨나요? 이번 달을 되돌아보아요! \n")
+        else : 
+            print("파산입니다! 허리띠를 졸라매세요\n")
+            
+            
     def add_revenue(self):
         try:
             revenue=int(input("수입을 써주세요 : "))
