@@ -27,10 +27,10 @@ class Budget:
         per_total = (total_e/total_r)*100
         print(f"총 지출: {total_e}원\n")
         print(f"현재 총 수익의 {per_total}% 사용하셨습니다.\n")
-        if 0 < per_total and per_total < 40:
+        if 0 <= per_total and per_total <= 40:
             print("절약하는 자세 좋아요!")
             return
-        elif 40 < per_total and per_total < 70:
+        elif 40 < per_total and per_total <= 70:
             print("이번달은 돈을 좀 쓰셨네요. 다음달은 아껴쓰기!\n")
             return
         elif 70< per_total and per_total <= 100 :
